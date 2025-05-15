@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>Projektų lentelė</h4>
+<form action="" method="get">
+  <p><input type="text" name="paieskoslaukelis"><input type="submit" value="filtruoti"></p>
+  <p><a href="/projektai/naujas">Įvesti naują projektą</a></p>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NT projektas</th>
+            <th>Kaina</th>
+            <th>Kaina su PVM</th>
+            <th>Veiksmai</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for project in projects %}
+    <tr>
+        <td>{{ project.id }}</td>
+        <td>{{ project.pavadinimas }}</td>
+        <td>{{ project.kaina }}</td>
+        <td>{{ project.kaina_su_pvm }}</td>
+        <td>
+            <p>
+            <a href="/projektai/{{ project.id }}">žiūrėti</a>
+            <a href="/projektai/redaguoti/{{ project.id }}">redaguoti</a>
+            <form action="/projektai/trinti/{{ project.id }}" method="post" style="display:inline;">
+                <input type="submit" value="ištrinti">
+            </form>
+            </p>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

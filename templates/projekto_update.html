@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>{{ project.pavadinimas }} redaguoti:</h4>
+<form action="" method="post">
+  <p>Projekto pavadinimas:</p>
+  <p><input type="text" name="pavadinimolaukelis" value="{{ project.pavadinimas }}"></p>
+  <p>Kaina:</p>
+  <p><input type="text" name="kainoslaukelis" value="{{ project.kaina }}"></p>
+  <p><input type="submit" value="Įrašyti pakeitimus į db"></p>
+</form>
+{% endblock %}
