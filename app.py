@@ -116,3 +116,14 @@ def edit_project(projektas_id):
 if __name__ == '__main__':
     app.run()
     # app.run(host="0.0.0.0", port=80, debug=True) # cloude
+
+
+# veiksmai cloude, konteinerio terminale:
+# pip install Flask-SQLAlchemy
+# mkdir darbuotojai_app
+# cd darbuotojai_app
+# git clone <repositorijos adressas> .
+# python db_populate.py
+# atsidarom app.py failą
+# app.py faile keičiam app.run į app.run(host="0.0.0.0", port=80, debug=True)
+# spaudžiam run mygtuką
